@@ -4,6 +4,7 @@ import pytest
 import yaml
 from appium.webdriver.common.touch_action import TouchAction
 from selenium.common.exceptions import NoSuchElementException
+from PageObject.login import LoginObject
 
 from mima import get_number_keyboard_location,key_click
 class TestYsApp:
@@ -24,10 +25,7 @@ class TestYsApp:
 
     @pytest.mark.parametrize("username,password",data)
     def test_login(self,username,password):
-        self.driver.implicitly_wait(10)
-        self.driver.find_element_by_android_uiautomator(
-            'new UiSelector().text("我的")'
-        ).click()
+        LoginObject().login(self.driver)
 
     #登录页有账户的页面
     def test_login_havaCount(self):
@@ -62,6 +60,7 @@ class TestYsApp:
         self.driver.find_element_by_android_uiautomator(
             'new UiSelector().text("安全登录")'
         ).click()
+
 
     @classmethod
     def teardown_class(cls):

@@ -1,0 +1,7 @@
+- text: 切换账号
+- id: com.ysepay.mobileportal.activity:id/loginUserNameEdit
+  input: m13751317604
+- text: 请输入密码/验证码
+- key: key_click
+- id: com.ysepay.mobileportal.activity:id/prot_agreement
+- text: 安全登录
